@@ -50,6 +50,7 @@ This project used predictive modeling and anomaly detection to identify high-ris
 
 ## Sample Visualizations
 - Anomaly distribution plot
+![Meal Anomaly Distribution](images/meal_anomaly_distribution.PNG)
 
 ---
 
