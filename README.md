@@ -1,26 +1,66 @@
 # P-Card Transaction Risk Modeling and Anomaly Detection
 
 ## Project Overview
-This project used predictive modeling and anomaly detection to identify high-risk transactions in a corporate purchasing card (P-Card) dataset spanning eight years. The goal was to support internal audit efforts, reduce overspending, and strengthen compliance visibility.
+This project analyzes corporate purchase card (P-Card) transactions to identify high-risk cardholder behavior and uncover anomalies in meal-related spending. It combines business rules (per diem thresholds) with machine learning (logistic regression & isolation forest) to surface potential compliance issues across departments.
 
 ---
 
 ## Objective
-- Detect overspending and high-risk cardholder behavior
-- Prioritize audit reviews based on transaction risk scores
-- Support compliance policy changes using data-backed insights
+- Flag employees regularly exceeding meal per diem thresholds
+- Build predictive models to identify cardholders likely to overspend
+- Detect transaction anomalies using unsupervised machine learning
+- Create executive-friendly summaries by month and department
 
 ---
 
 ## Tools & Techniques
-- **Languages**: Python (Pandas, NumPy, scikit-learn, Matplotlib, Seaborn)
-- **Database**: PostgreSQL
-- **Visualization**: SAP Analytics Cloud, Qlik Sense
-- **Methods**: Logistic Regression, Decision Trees, Isolation Forest, Feature Engineering, Outlier Detection
+- Python (Pandas, scikit-learn, Matplotlib, Seaborn)
+- Logistic Regression (predictive modeling)
+- Isolation Forest (anomaly detection)
+- Business rule logic (threshold flagging)
+- Data wrangling, aggregation, and time-based groupings
 
 ---
 
-## Process
+## Files Included
+- `pcard_risk_analysis.ipynb` : Full analysis and model code
+- `data/`: Sample CSVs to test the code
+  - `dummy_pcard_transactions.csv`
+  - `dummy_pcardholder_limits.csv`
+  - `dummy_employee_list.csv`
+- `images/`: Output visualizations
+  - `meal_anomaly_distribution.PNG`
+  - `log_regression_results.PNG`
+ 
+---
+
+## How to Run
+1. Clone or download this repository
+2. Open the `pcard_meals_analysis.ipynb` notebook
+3. Ensure the dummy CSVs are placed in a `/data` folder relative to the notebook
+4. Run the notebook cells to:
+    - Clean the data
+    - Generate per diem violation summaries
+    - Train a logistic regression model
+    - Visualize anomalies
+
+---
+
+## Sample Output
+- Logistic regression results
+![Meal Anomaly Distribution](images/log_regression_results.PNG)
+- Anomaly distribution plot
+![Meal Anomaly Distribution](images/meal_anomaly_distribution.PNG)
+
+## Results & Impact
+- Identified ~$3.7M in annual overspending risk
+- Prioritized 2.5% of transactions for targeted audit review
+- Supported executive proposal for compliance policy updates
+- Reduced manual audit load using data-driven flags
+
+---
+
+## Full Process
 
 ### 1. Data Preparation
 - Processed ~1.6M transactions across 8 years
@@ -39,43 +79,5 @@ This project used predictive modeling and anomaly detection to identify high-ris
 ### 4. Anomaly Detection
 - Used Isolation Forest and statistical outlier detection to flag abnormal transactions
 - Visualized top 1% anomalies by risk score for audit review
-
----
-
-## Results & Impact
-- Identified ~$3.7M in annual overspending risk
-- Prioritized 2.5% of transactions for targeted audit review
-- Supported executive proposal for compliance policy updates
-- Reduced manual audit load using data-driven flags
-
-## Sample Visualizations
-- Logistic regression results
-![Meal Anomaly Distribution](images/log_regression_results.PNG)
-- Anomaly distribution plot
-![Meal Anomaly Distribution](images/meal_anomaly_distribution.PNG)
-
----
-
-## Related Skills Demonstrated
-- Predictive modeling
-- Anomaly detection
-- ETL pipeline design
-- Business analytics storytelling
-- Compliance and risk strategy
-
----
-
-## Repository Structure
-
-```bash
-pcard-risk-modeling/
-│
-├── README.md
-├── notebooks/
-│   └── risk_model.ipynb
-├── data/
-│   └── sample_data.csv
-├── images/
-│   └── meal_anomaly_distribution.png
 
 
