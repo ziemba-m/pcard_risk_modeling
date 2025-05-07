@@ -49,6 +49,8 @@ This project used predictive modeling and anomaly detection to identify high-ris
 - Reduced manual audit load using data-driven flags
 
 ## Sample Visualizations
+- Logistic regression results
+![Meal Anomaly Distribution](images/log_regression_results.PNG)
 - Anomaly distribution plot
 ![Meal Anomaly Distribution](images/meal_anomaly_distribution.PNG)
 
